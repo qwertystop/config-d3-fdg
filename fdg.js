@@ -1,7 +1,22 @@
 'use strict';
+// DOM references and other script-globals
 let eSvg = d3.select("svg"),
 	dWidth = +svg.attr("width"),
 	dHeight = +svg.attr("height)
+
+let eConfig = document.getElementById("config")
+let eLinkConf = eConfig.elements['link-sel']
+let eColorConf = eConfig.elements['color-sel']
+let eXConf = eConfig.elements['x-sel']
+let eYConf = eConfig.elements['y-sel']
+
+let dRanges = {// for each column, specify a min and max
+	// TODO
+}
+
+let dMappings = {// for each column, specify a function mapping value to a number
+	// TODO
+}
 
 let tData = d3.csv("data.csv", function(error, data) {
 	if error {throw error}
@@ -9,7 +24,6 @@ let tData = d3.csv("data.csv", function(error, data) {
 		??? // TODO any input-specific processing here
 	})})
 
-// TODO menus for user-selecting what fields
 // TODO set up links based on same field values
 
 // Now the SVG part
