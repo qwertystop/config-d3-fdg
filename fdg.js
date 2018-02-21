@@ -2,7 +2,7 @@
 // DOM references and other script-globals
 let eSvg = d3.select("svg"),
 	dWidth = +svg.attr("width"),
-	dHeight = +svg.attr("height)
+	dHeight = +svg.attr("height")
 
 let eConfig = document.getElementById("config")
 let eLinkConf = eConfig.elements['link-sel']
