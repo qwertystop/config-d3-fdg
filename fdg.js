@@ -24,19 +24,22 @@ let tData = d3.csv("data.csv", function(error, data) {
 		??? // TODO any input-specific processing here
 	})})
 
-// TODO set up links based on same field values
-
 // Now the SVG part
 // draw nodes
 let eNodes = svg.append("g")
 	.attr("class", "nodes")
 	.selectAll("circle")
 	.data(tData)
-	.attr("r", 5) // TODO dynamic size
-	.attr("fill", "red") // TODO dynamic color
+	.attr("r", 5)
+	.attr("fill", d => {
+		return dColScales[eColorConv.value](d[eColorConv.value])})}
+
+eColorConf.onchange = () => {
+	eNodes.transition().attr("fill", d => {
+		return dColScales[eColorConv.value](d[eColorConv.value])})}
 
 // TODO hover labelling
-// TODO click-for-details in sidebar
+// TODO click for details-in-sidebar
 
 // new node drawing
 eNodes.enter().append("circle")
