@@ -44,6 +44,10 @@ eLink.exit().remove()
 var simulation = d3.forceSimulation().nodes(data)
 
 // add forces
+function mid(lo, hi, un) {
+	return Math.max(lo, Math.min(un, hi))
+}
+
 simulation
 	.force("fCharge", d3.forceManyBody())
 	.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
@@ -52,9 +56,10 @@ simulation
 
 function onTick() {
 	// copy position updates from simnode to svg element
+	// but bound
 	eNodes
-		.attr("cx", function(d) {return d.x})
-		.attr("cy", function(d) {return d.y})
+		.attr("cx", d => {return mid(0, dWidth, d.x)})
+		.attr("cy", d => {return mid(0, dHeight, d.y)})
 
 	// and the same for links
 	eLinks
