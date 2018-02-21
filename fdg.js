@@ -10,11 +10,11 @@ let eColorConf = eConfig.elements['color-sel']
 let eXConf = eConfig.elements['x-sel']
 let eYConf = eConfig.elements['y-sel']
 
-let dRanges = {// for each column, specify a min and max
+let dIntScales = {// for each column, specify a function from value to number
 	// TODO
 }
 
-let dMappings = {// for each column, specify a function mapping value to a number
+let dColScales = {// for each column, specify a function from value to color
 	// TODO
 }
 
@@ -56,19 +56,41 @@ eLink.enter().append("line")
 // removing
 eLink.exit().remove()
 
+
+// forces
 let simulation = d3.forceSimulation().nodes(tData)
 
-// add forces
-function mid(lo, hi, un) {
-	return Math.max(lo, Math.min(un, hi))
-}
+let fX = d3.forceX((node, _index) => {
+	return dIntScales[eXConf.value](node[eXConf.value])})
+
+let fX = d3.forceX((node, _index) => {
+	return dIntScales[eYConf.value](node[eYConf.value])})
+
+function calcLinks() {
+	let sLVal = eLinkConf.value
+	// for each node
+	let bunched = eNodes.map((n, i, arr) => {
+		// only compare to things not yet covered
+		arr.slice(i+1)
+			// match to each other node with the same value
+			// in the field used for linking
+			.filter(o => { return o[sLVal] === n[sLVal]})
+			// and produce link objects
+			.map(o => { return {"source": n, "target": o}})})
+	// finally, flatten it
+	return [].concat(...bunched)}
+
+let fLink = d3.forceLink(calcLinks())
+
+eLinkConf.onchange = () => {fLink.links(calcLinks())}
 
 simulation
 	.force("fCharge", d3.forceManyBody())
 	.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
+	.force("fX", fX).force("fY", fY).force("fLink", fLink)
 
-// TODO x and y forces for field-based positioning
-
+function mid(lo, hi, un) {
+	return Math.max(lo, Math.min(un, hi)) }
 
 function onTick() {
 	// copy position updates from simnode to svg element
@@ -82,8 +104,8 @@ function onTick() {
 		.attr("x1", d => {return d.source.x})
 		.attr("y1", d => {return d.source.y})
 		.attr("x2", d => {return d.target.x})
-		.attr("y2", d => {return d.target.y})
-}
+		.attr("y2", d => {return d.target.y})}
+
 simulation.on("tick", onTick)
 
 // TODO CANDY automatic cluster labels?
