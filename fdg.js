@@ -2,7 +2,11 @@ var eSvg = d3.select("svg"),
 	dWidth = +svg.attr("width"),
 	dHeight = +svg.attr("height)
 
-var tData = ??? // TODO read in data
+var tData = d3.csv("data.csv", function(error, data) {
+	if error {throw error}
+	data.forEach(function(d) {
+		??? // TODO any input-specific processing here
+	})})
 
 // TODO menus for user-selecting what fields
 // TODO set up links based on same field values
