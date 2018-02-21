@@ -6,7 +6,27 @@
 </head>
 <body>
  <svg width="900" height="600"></svg>
- <!-- TODO  place for menus-->
- <!-- TODO  place for informational sidebar-->
+ <div class="sidebar">
+  <div id="forms">
+  <form name="config">
+   <fieldset>
+    <legend>Which attributes should be visualized, and how?</legend>
+    <span class=form-label>Group together nodes with the same:</span>
+    <select name="link"></select>
+    <br>
+    <span class=form-label>Color-code nodes by:</span>
+    <select name="colorcode"></select>
+    <br>
+    <span class=form-label>Horizontal position should (roughly) indicate:</span>
+    <select name="x-read"></select>
+    <br>
+    <span class=form-label>Vertical position should (roughly) indicate:</span>
+    <select name="y-read"></select>
+   </fieldset>
+   </form>
+  </div>
+  <h3>Node information</h3>
+  <ul class="nodeinfo"></ul>
+ </div>
 </body>
 </html>
