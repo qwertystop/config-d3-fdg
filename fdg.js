@@ -18,11 +18,7 @@ let dColScales = {// for each column, specify a function from value to color
 	// TODO
 }
 
-let tData = d3.csv("data.csv", function(error, data) {
-	if error {throw error}
-	data.forEach(function(d) {
-		??? // TODO any input-specific processing here
-	})})
+let tData = d3.csvParse("data.csv")
 
 // Now the SVG part
 // draw nodes
