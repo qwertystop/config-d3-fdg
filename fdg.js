@@ -16,15 +16,53 @@ function makeIntScale(...items) {
 	let mapped = items.forEach((a, i) => {lookup[a] = (i+1)/max})
 	return a=>{return lookup[a]}}
 
+let ynsScale = makeIntScale('No','Slightly/Special','Yes')
+
 let dIntScales = {// for each column, specify a function from value to number in [0,1]
-	// TODO data-specific
+	"Year of release": d => {return ((d - 1980) / (2018 - 1980))},
+	"Primarily vertical or horizontal": makeIntScale('Vertical','Mixed','Horizontal'),
+	"Backtracking": ynsScale,
+	"Physical structure": makeIntScale('Linear','Mixed','Open'),
+	"Jump combat": ynsScale,
+	"Melee combat": ynsScale,
+	"Ranged combat": ynsScale,
+	"2D/3D": makeIntScale('2', '3'),
+	"Character progression": ynsScale,
+	"Collectables": ynsScale,
+	"Power-up": ynsScale,
+	"Multiple jump types": ynsScale,
+	"Swimming": ynsScale,
+	"Air control": makeIntScale('None','Weak','Strong'),
+	"Airjump": ynsScale,
+	"Walljump": ynsScale,
+	"Leeway for Errors": makeIntScale('Little','Lots','Health'),
+	"Multiplayer": makeIntScale('No','Co-op','Competitive'),
+	"Story": makeIntScale('No','Cue','Yes'),
 }
 
 // less typing for up to ten colors
 function makeColScale(count) {return d3.scaleOrdinal(d3.schemeCategory10[count])}
 
 let dColScales = {// for each column, specify a function from value to color
-	// TODO
+	"Year of release": d => {return d3.interpolatePlasma(dIntScales['Year of release'](d))},
+	"Primarily vertical or horizontal": makeColScale(),
+	"Backtracking": makeColScale(3),
+	"Physical structure": makeColScale(3),
+	"Jump combat": makeColScale(3),
+	"Melee combat": makeColScale(3),
+	"Ranged combat": makeColScale(3),
+	"2D/3D": makeColScale(2),
+	"Character progression": makeColScale(3),
+	"Collectables": makeColScale(3),
+	"Power-up": makeColScale(3),
+	"Multiple jump types": makeColScale(3),
+	"Swimming": makeColScale(3),
+	"Air control": makeColScale(3),
+	"Airjump": makeColScale(3),
+	"Walljump": makeColScale(3),
+	"Leeway for Errors": makeColScale(3),
+	"Multiplayer": makeColScale(3),
+	"Story": makeColScale(3),
 }
 
 // set up contents of dropdowns
