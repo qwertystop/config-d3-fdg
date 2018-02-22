@@ -37,6 +37,18 @@ d3.select("#config").selectAll("select")
 	.attr("value", d => {return d})
 	.text(d => {return d})
 
+
+let fX = d3.forceX((node, _index) => {
+	return dIntScales[eXConf.value](node[eXConf.value]) * dWidth})
+
+let fY = d3.forceX((node, _index) => {
+	return dIntScales[eYConf.value](node[eYConf.value]) * dHeight})
+
+let fLink = d3.forceLink()
+
+function mid(lo, hi, un) {
+	return Math.max(lo, Math.min(un, hi)) }
+
 // load data and run page
 d3.csv("data.csv", (error, tData) => {
 	if (error) throw error
@@ -92,15 +104,6 @@ d3.csv("data.csv", (error, tData) => {
 
 	// forces
 	let simulation = d3.forceSimulation().nodes(tData)
-
-	let fX = d3.forceX((node, _index) => {
-		return dIntScales[eXConf.value](node[eXConf.value])})
-
-	let fY = d3.forceX((node, _index) => {
-		return dIntScales[eYConf.value](node[eYConf.value])})
-
-	let fLink = d3.forceLink()
-
 	eLinkConf.onchange = () => {
 		let aLinks = calcLinks()
 		fLink.links(aLinks)
@@ -109,9 +112,6 @@ d3.csv("data.csv", (error, tData) => {
 	simulation.force("fCharge", d3.forceManyBody())
 		.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
 		.force("fX", fX).force("fY", fY).force("fLink", fLink)
-
-	function mid(lo, hi, un) {
-		return Math.max(lo, Math.min(un, hi)) }
 
 	function onTick() {
 		// copy position updates from simnode to svg element
