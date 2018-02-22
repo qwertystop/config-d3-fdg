@@ -10,27 +10,36 @@ let eColorConf = eConfig.elements['color-sel']
 let eXConf = eConfig.elements['x-sel']
 let eYConf = eConfig.elements['y-sel']
 
-let dIntScales = {// for each column, specify a function from value to number
-	// TODO
+function makeIntScale(...items) {
+	let max = items.length + 1
+	let lookup = {}
+	let mapped = items.foreach((a, i) => {lookup[a] = (i+1)/max})
+	return a=>{return lookup[a]}}
+
+let dIntScales = {// for each column, specify a function from value to number in [0,1]
+	// TODO data-specific
 }
+
+// less typing for up to ten colors
+function makeColScale(count) {return d3.scaleOrdinal(d3.schemeCategory10[count])}
 
 let dColScales = {// for each column, specify a function from value to color
 	// TODO
 }
 
-// load data
+// set up contents of dropdowns
+// TODO include a null
+d3.select("#config").selectAll("select")
+	.selectAll("option")
+	.data(dIntScales.keys())
+	.enter()
+	.append("option")
+	.attr("value", d => {return d})
+	.text(d => {return d})
+
+// load data and run page
 d3.csv("data.csv", (error, tData) => {
 	if (error) throw error
-
-	// set up contents of dropdowns
-	// TODO include a null
-	d3.select("#config").selectAll("select")
-		.selectAll("option")
-		.data(tData.columns)
-		.enter()
-		.append("option")
-		.attr("value", d => {return d})
-		.text(d => {return d})
 
 	// Now the SVG part
 	// draw nodes
@@ -80,7 +89,6 @@ d3.csv("data.csv", (error, tData) => {
 
 	// removing
 	eLink.exit().remove()
-
 
 	// forces
 	let simulation = d3.forceSimulation().nodes(tData)
