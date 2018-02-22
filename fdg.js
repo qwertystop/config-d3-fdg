@@ -13,7 +13,7 @@ let eYConf = eConfig.elements['y-sel']
 function makeIntScale(...items) {
 	let max = items.length + 1
 	let lookup = {}
-	let mapped = items.foreach((a, i) => {lookup[a] = (i+1)/max})
+	let mapped = items.forEach((a, i) => {lookup[a] = (i+1)/max})
 	return a=>{return lookup[a]}}
 
 let dIntScales = {// for each column, specify a function from value to number in [0,1]
@@ -31,7 +31,7 @@ let dColScales = {// for each column, specify a function from value to color
 // TODO include a null
 d3.select("#config").selectAll("select")
 	.selectAll("option")
-	.data(dIntScales.keys())
+	.data(Object.keys(dIntScales))
 	.enter()
 	.append("option")
 	.attr("value", d => {return d})
@@ -79,7 +79,7 @@ d3.csv("data.csv", (error, tData) => {
 	function calcLinks() {
 		let sLVal = eLinkConf.value
 		// for each node
-		let bunched = eNodes.map((n, i, arr) => {
+		let bunched = eNodes.nodes().map((n, i, arr) => {
 			// only compare to things not yet covered
 			arr.slice(i+1)
 			// match to each other node with the same value
