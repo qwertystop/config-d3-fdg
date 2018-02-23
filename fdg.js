@@ -69,8 +69,8 @@ function calcLinks(key) {
 	// finally, flatten it
 	return [].concat(...bunched)}
 
-	eLinkConf.onChange = function() {
 function defOnchanges(sim) {
+	eLinkConf.onchange = function() {
 		let key = this.value
 		let eLinks = eSvg.select('g.links').selectAll('line')
 		if (key === "---") {
@@ -93,7 +93,7 @@ function defOnchanges(sim) {
 			eNodes.transition().attr("fill", d => {
 				return mapper(d[key])})}}
 
-	eXConf.onChange = function() {
+	eXConf.onchange = function() {
 		let key = this.value
 		if (key === "---") {
 			sim.force("fX", null)
@@ -104,7 +104,7 @@ function defOnchanges(sim) {
 		sim.alpha(1)
 		sim.restart()}
 
-	eYConf.onChange = function() {
+	eYConf.onchange = function() {
 		let key = this.value
 		if (key === "---") {
 			sim.force("fY", null)
