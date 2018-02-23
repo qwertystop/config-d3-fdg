@@ -40,7 +40,7 @@ function mid(lo, hi, un) {
 	return Math.max(lo, Math.min(un, hi)) }
 
 // node setup
-function nodeSetup() {
+function nodeSetup(tData) {
 	let eNodes = eSvg.append("g")
 		.attr("class", "nodes")
 		.selectAll("circle")
@@ -48,8 +48,7 @@ function nodeSetup() {
 		.enter()
 		.append("circle")
 		.attr("r", 5)
-		.attr("fill", d => {
-			return dColScales[eColorConf.value](d[eColorConf.value])})
+		.attr("fill", "black")
 	// TODO hover labelling
 	// TODO click for details-in-sidebar
 
@@ -70,7 +69,7 @@ function calcLinks(key, eNodes) {
 	return [].concat(...bunched)}
 
 function defOnchanges(eNodes, eLinks, sim) {
-	eLinkConf.onChange = () => {
+	eLinkConf.onChange = function() {
 		let key = this.value
 		if (key === "---") {
 			sim.force("fLink", null)
@@ -82,7 +81,7 @@ function defOnchanges(eNodes, eLinks, sim) {
 		sim.alpha(1)
 		sim.restart()}
 
-	eColorConf.onchange = () => {
+	eColorConf.onchange = function() {
 		let key = this.value
 		if (key === "---") {
 			eNodes.transition().attr("fill", "black")}
@@ -91,7 +90,7 @@ function defOnchanges(eNodes, eLinks, sim) {
 			eNodes.transition().attr("fill", d => {
 				return mapper(d[key])})}}
 
-	eXConf.onChange = () => {
+	eXConf.onChange = function() {
 		let key = this.value
 		if (key === "---") {
 			sim.force("fX", null)
@@ -99,11 +98,10 @@ function defOnchanges(eNodes, eLinks, sim) {
 			let mapper = dIntScales[key]
 			sim.force("fX", d3.forceX((d) => {
 				mapper(d[key]) * dWidth }))}
-		}
 		sim.alpha(1)
 		sim.restart()}
 
-	eYConf.onChange = () => {
+	eYConf.onChange = function() {
 		let key = this.value
 		if (key === "---") {
 			sim.force("fY", null)
@@ -111,7 +109,6 @@ function defOnchanges(eNodes, eLinks, sim) {
 			let mapper = dIntScales[key]
 			sim.force("fY", d3.forceX((d) => {
 				mapper(d[key]) * dHeight }))}
-		}
 		sim.alpha(1)
 		sim.restart()} }
 
@@ -120,7 +117,7 @@ d3.csv("data.csv", (error, tData) => {
 	if (error) throw error
 
 	// Now the SVG part
-	let eNodes = nodeSetup()
+	let eNodes = nodeSetup(tData)
 
 	// deletion
 	eNodes.exit().remove()
@@ -131,7 +128,7 @@ d3.csv("data.csv", (error, tData) => {
 		.selectAll("line")
 		.enter().append("line")
 	// removing
-	eLink.exit().remove()
+	eLinks.exit().remove()
 	// data will be added in dropdown onchange
 
 	// make the simulation
