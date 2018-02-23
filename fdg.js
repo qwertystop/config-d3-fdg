@@ -55,7 +55,8 @@ function nodeSetup(tData) {
 	return eNodes }
 
 // calculate links
-function calcLinks(key, eNodes) {
+function calcLinks(key) {
+	let eNodes = eSvg.select('g.nodes').selectAll('circle')
 	// for each node
 	let bunched = eNodes.nodes().map((n, i, arr) => {
 		// only compare to things not yet covered
@@ -68,20 +69,22 @@ function calcLinks(key, eNodes) {
 	// finally, flatten it
 	return [].concat(...bunched)}
 
-function defOnchanges(eNodes, eLinks, sim) {
 	eLinkConf.onChange = function() {
+function defOnchanges(sim) {
 		let key = this.value
+		let eLinks = eSvg.select('g.links').selectAll('line')
 		if (key === "---") {
 			sim.force("fLink", null)
 			eLinks.data([]).exit().remove()}
 		else {
-			let aLinks = calcLinks(this.value, eNodes)
+			let aLinks = calcLinks(this.value)
 			sim.force("fLink", d3.forceLink(aLinks))
 			eLinks.data(aLinks).enter().append("line")}
 		sim.alpha(1)
 		sim.restart()}
 
 	eColorConf.onchange = function() {
+		let eNodes = eSvg.select('g.nodes').selectAll('circle')
 		let key = this.value
 		if (key === "---") {
 			eNodes.transition().attr("fill", "black")}
@@ -139,7 +142,7 @@ d3.csv("data.csv", (error, tData) => {
 		.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
 
 	// set up onchange for selection boxes
-	defOnchanges(eNodes, eLinks, simulation)
+	defOnchanges(simulation)
 
 	function onTick() {
 		// copy position updates from simnode to svg element
