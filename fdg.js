@@ -110,7 +110,7 @@ function defOnchanges(sim) {
 			sim.force("fY", null)
 		} else {
 			let mapper = dIntScales[key]
-			sim.force("fY", d3.forceX((d) => {
+			sim.force("fY", d3.forceY((d) => {
 				mapper(d[key]) * dHeight }))}
 		sim.alpha(1)
 		sim.restart()} }
