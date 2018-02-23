@@ -57,16 +57,16 @@ function nodeSetup(tData) {
 
 // calculate links
 function calcLinks(key) {
-	let eNodes = eSvg.select('g.nodes').selectAll('circle')
+	let data = eSvg.select('g.nodes').selectAll('circle').data()
 	// for each node
-	let bunched = eNodes.nodes().map((n, i, arr) => {
+	let bunched = data.map((n, i, arr) => {
 		// only compare to things not yet covered
-		arr.slice(i+1)
+		let after = arr.slice(i+1)
 		// match to each other node with the same value
 		// in the field used for linking
-			.filter(o => { return o[key] === n[key]})
+		let matching = after.filter(o => { return o[key] === n[key]})
 		// and produce link objects
-			.map(o => { return {"source": n, "target": o}})})
+		return matching.map(o => { return {"source": n, "target": o}})})
 	// finally, flatten it
 	return [].concat(...bunched)}
 
