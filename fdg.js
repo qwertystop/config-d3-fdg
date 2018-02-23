@@ -49,9 +49,10 @@ function nodeSetup(tData) {
 		.append("circle")
 		.attr("r", 8)
 		.attr("fill", "black")
-	// TODO hover labelling
-	// TODO click for details-in-sidebar
 
+	eNodes.append("svg:title")
+		.text(d => { return d.Name })
+	// TODO click for details-in-sidebar
 	return eNodes }
 
 // calculate links
