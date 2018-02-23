@@ -7,3 +7,14 @@
 	stroke: #fff;
 	stroke-width: 1.5px;
 }
+
+#canvas {
+	margin-top: 2em;
+	margin-left: 2em;
+}
+
+#sidebar {
+	margin-top: 2em;
+	margin-right: 2em;
+	float: right;
+}
