@@ -41,28 +41,28 @@ let dIntScales = {// for each column, specify a function from value to number in
 }
 
 // less typing for up to ten colors
-function makeColScale(count) {return d3.scaleOrdinal(d3.schemeCategory10[count])}
+function makeColScale() {return d3.scaleOrdinal(d3.schemeCategory10)}
 
 let dColScales = {// for each column, specify a function from value to color
 	"Year of release": d => {return d3.interpolatePlasma(dIntScales['Year of release'](d))},
 	"Primarily vertical or horizontal": makeColScale(),
-	"Backtracking": makeColScale(3),
-	"Physical structure": makeColScale(3),
-	"Jump combat": makeColScale(3),
-	"Melee combat": makeColScale(3),
-	"Ranged combat": makeColScale(3),
-	"2D/3D": makeColScale(2),
-	"Character progression": makeColScale(3),
-	"Collectables": makeColScale(3),
-	"Power-up": makeColScale(3),
-	"Multiple jump types": makeColScale(3),
-	"Swimming": makeColScale(3),
-	"Air control": makeColScale(3),
-	"Airjump": makeColScale(3),
-	"Walljump": makeColScale(3),
-	"Leeway for Errors": makeColScale(3),
-	"Multiplayer": makeColScale(3),
-	"Story": makeColScale(3),
+	"Backtracking": makeColScale(),
+	"Physical structure": makeColScale(),
+	"Jump combat": makeColScale(),
+	"Melee combat": makeColScale(),
+	"Ranged combat": makeColScale(),
+	"2D/3D": makeColScale(),
+	"Character progression": makeColScale(),
+	"Collectables": makeColScale(),
+	"Power-up": makeColScale(),
+	"Multiple jump types": makeColScale(),
+	"Swimming": makeColScale(),
+	"Air control": makeColScale(),
+	"Airjump": makeColScale(),
+	"Walljump": makeColScale(),
+	"Leeway for Errors": makeColScale(),
+	"Multiplayer": makeColScale(),
+	"Story": makeColScale(),
 }
 
 // set up contents of dropdowns
