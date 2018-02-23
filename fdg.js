@@ -123,9 +123,6 @@ d3.csv("data.csv", (error, tData) => {
 	// Now the SVG part
 	let eNodes = nodeSetup(tData)
 
-	// deletion
-	eNodes.exit().remove()
-
 	// draw links
 	let eLinks = eSvg.append("g")
 		.attr("class", "links")
