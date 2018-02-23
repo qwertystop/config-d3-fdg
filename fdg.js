@@ -47,7 +47,7 @@ function nodeSetup(tData) {
 		.data(tData)
 		.enter()
 		.append("circle")
-		.attr("r", 5)
+		.attr("r", 8)
 		.attr("fill", "black")
 	// TODO hover labelling
 	// TODO click for details-in-sidebar
@@ -138,7 +138,8 @@ d3.csv("data.csv", (error, tData) => {
 	let simulation = d3.forceSimulation().nodes(tData)
 
 	// non-configured forces
-	simulation.force("fCharge", d3.forceManyBody())
+	simulation.force("fCharge", d3.forceManyBody().distanceMax(80))
+		.force("fCollide", d3.fCollide)
 		.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
 
 	// set up onchange for selection boxes
@@ -147,8 +148,8 @@ d3.csv("data.csv", (error, tData) => {
 	function onTick() {
 		// copy position updates from simnode to svg element
 		// but bound
-		eNodes.attr("cx", d => {return mid(0, dWidth, d.x)})
-			.attr("cy", d => {return mid(0, dHeight, d.y)})
+		eNodes.attr("cx", d => {return mid(8, dWidth-8, d.x)})
+			.attr("cy", d => {return mid(8, dHeight-8, d.y)})
 
 		// and the same for links
 		eLinks.attr("x1", d => {return d.source.x})
