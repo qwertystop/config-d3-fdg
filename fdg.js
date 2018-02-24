@@ -88,14 +88,11 @@ function calcLinks(key) {
 function defConfiggers(sim) {
 	eLinkConf.onchange = function() {
 		let key = this.value
-		let eLinks = eSvg.select('g.links').selectAll('line')
 		if (key === "---") {
-			sim.force("fLink", null)
-			eLinks.data([]).exit().remove()}
+			sim.force("fLink", null)}
 		else {
 			let aLinks = calcLinks(this.value)
-			sim.force("fLink", d3.forceLink(aLinks))
-			eLinks.data(aLinks).enter().append("line")}
+			sim.force("fLink", d3.forceLink(aLinks))}
 		sim.alpha(1)
 		sim.restart()}
 
@@ -158,15 +155,6 @@ d3.csv("data.csv", (error, tData) => {
 	// Now the SVG part
 	let eNodes = nodeSetup(tData)
 
-	// draw links
-	let eLinks = eSvg.append("g")
-		.attr("class", "links")
-		.selectAll("line")
-		.enter().append("line")
-	// removing
-	eLinks.exit().remove()
-	// data will be added in dropdown onchange
-
 	// make the simulation
 	let simulation = d3.forceSimulation().nodes(tData)
 
@@ -192,14 +180,7 @@ d3.csv("data.csv", (error, tData) => {
 		// copy position updates from simnode to svg element
 		// but bound
 		eNodes.attr("cx", d => {return mid(8, dWidth-8, d.x)})
-			.attr("cy", d => {return mid(8, dHeight-8, d.y)})
-
-		// and the same for links
-		// TODO these aren't drawing for some reason
-		eLinks.attr("x1", d => {return d.source.x})
-			.attr("y1", d => {return d.source.y})
-			.attr("x2", d => {return d.target.x})
-			.attr("y2", d => {return d.target.y})}
+			.attr("cy", d => {return mid(8, dHeight-8, d.y)})}
 
 	simulation.on("tick", onTick)
 })
