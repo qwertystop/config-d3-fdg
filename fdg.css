@@ -8,13 +8,12 @@
 	stroke-width: 1.5px;
 }
 
-#canvas {
-	margin-top: 2em;
-	margin-left: 2em;
+#sidebar {
+	float: right;
+	max-width: 50%
 }
 
-#sidebar {
-	margin-top: 2em;
-	margin-right: 2em;
-	float: right;
+div.nodeinfo {
+	column-count: 2;
+	column-gap: 0.5em;
 }

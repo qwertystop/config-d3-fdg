@@ -39,6 +39,17 @@ d3.select("#config").selectAll("select")
 function mid(lo, hi, un) {
 	return Math.max(lo, Math.min(un, hi)) }
 
+function onNodeClick(data) {
+	let pairs = d3.entries(data)
+		.filter(item => {
+			return ['x','y','vx','vy','i','index'].indexOf(item.key) === -1})
+	let dl = d3.select("div.nodeinfo")
+		.select('dl')
+		.html(new Array(pairs.length + 1).join("<dt><dd/>"))
+	let dt = dl.selectAll('dt').append('strong').data(pairs).html(d=>{return d.key+':'})
+	let dd = dl.selectAll('dd').data(pairs).html(d=>{return d.value})
+	}
+
 // node setup
 function nodeSetup(tData) {
 	let eNodes = eSvg.append("g")
@@ -49,6 +60,10 @@ function nodeSetup(tData) {
 		.append("circle")
 		.attr("r", 8)
 		.attr("fill", "black")
+		.on("click", d => {onNodeClick(d)})
+
+	d3.select("div.nodeinfo")
+		.append("dl")
 
 	eNodes.append("svg:title")
 		.text(d => { return d.Name })
