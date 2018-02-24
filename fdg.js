@@ -36,8 +36,6 @@ d3.select("#config").selectAll("select")
 	.attr("value", d => {return d})
 	.text(d => {return d})
 
-// TODO add sliders to configure link-strength and repulsion-strength
-
 function mid(lo, hi, un) {
 	return Math.max(lo, Math.min(un, hi)) }
 
@@ -72,7 +70,7 @@ function calcLinks(key) {
 	// finally, flatten it
 	return [].concat(...bunched)}
 
-function defOnchanges(sim) {
+function defConfiggers(sim) {
 	eLinkConf.onchange = function() {
 		let key = this.value
 		let eLinks = eSvg.select('g.links').selectAll('line')
@@ -163,7 +161,7 @@ d3.csv("data.csv", (error, tData) => {
 		.force("fCenter", d3.forceCenter(dWidth/2, dHeight/2))
 
 	// set up onchange for selection boxes
-	defOnchanges(simulation)
+	defConfiggers(simulation)
 
 	// reset-to-center button
 	// doesn't add any forces, so it just jumbles
