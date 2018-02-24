@@ -12,17 +12,22 @@
   <form id="config">
    <fieldset>
     <legend>Which attributes should be visualized, and how?</legend>
-    <span class=form-label>Group together nodes with the same:</span>
+    <label for="link-sel">Group together nodes with the same:</label>
     <select name="link-sel"></select>
     <br>
-    <span class=form-label>Color-code nodes by:</span>
+    <label for="link-str">Cluster tightness</label>
+    <input type="range" name="link-str" min="0" max="60" value="30">
+    <br>
+    <label for="color-sel">Color-code nodes by:</label>
     <select name="color-sel"></select>
     <br>
-    <span class=form-label>Horizontal position should (roughly) indicate:</span>
+    <label for="x-sel">Horizontal position should (roughly) indicate:</label>
     <select name="x-sel"></select>
     <br>
-    <span class=form-label>Vertical position should (roughly) indicate:</span>
+    <label for="y-sel">Vertical position should (roughly) indicate:</label>
     <select name="y-sel"></select>
+    <br>
+    <button name="reset" type="button">Reset positions</button>
    </fieldset>
    </form>
   </div>

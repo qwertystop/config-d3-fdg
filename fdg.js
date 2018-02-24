@@ -36,6 +36,8 @@ d3.select("#config").selectAll("select")
 	.attr("value", d => {return d})
 	.text(d => {return d})
 
+// TODO add sliders to configure link-strength and repulsion-strength
+
 function mid(lo, hi, un) {
 	return Math.max(lo, Math.min(un, hi)) }
 
@@ -114,7 +116,27 @@ function defOnchanges(sim) {
 			sim.force("fY", d3.forceY(d => {
 				return mapper(d[key]) * dHeight }))}
 		sim.alpha(1)
-		sim.restart()} }
+		sim.restart()}
+
+	// reset-to-center button
+	// doesn't add any forces, so it just jumbles
+	eConfig.elements['reset'].onclick = function() {
+		eSvg.select('g.nodes')
+			.selectAll('circle')
+			.data()
+			.forEach(n => {n.x = 0; n.y = 0})
+		sim.alpha(1)
+		sim.restart()}
+
+	// configurable link strength
+	eConfig.elements['link-str'].onclick = function() {
+		let dist = this.max - this.value
+		let linker = sim.force("fLink")
+		if (linker) {
+			linker.distance(dist)
+			sim.alpha(1)
+			sim.restart()}}}
+
 
 // load data and run page
 d3.csv("data.csv", (error, tData) => {
@@ -143,6 +165,16 @@ d3.csv("data.csv", (error, tData) => {
 	// set up onchange for selection boxes
 	defOnchanges(simulation)
 
+	// reset-to-center button
+	// doesn't add any forces, so it just jumbles
+	eConfig.elements['reset'].onclick = function() {
+		eSvg.select('g.nodes')
+			.selectAll('circle')
+			.data()
+			.forEach(n => {n.x = 0; n.y = 0})
+		simulation.alpha(1)
+		simulation.restart()}
+
 	function onTick() {
 		// copy position updates from simnode to svg element
 		// but bound
@@ -150,6 +182,7 @@ d3.csv("data.csv", (error, tData) => {
 			.attr("cy", d => {return mid(8, dHeight-8, d.y)})
 
 		// and the same for links
+		// TODO these aren't drawing for some reason
 		eLinks.attr("x1", d => {return d.source.x})
 			.attr("y1", d => {return d.source.y})
 			.attr("x2", d => {return d.target.x})
