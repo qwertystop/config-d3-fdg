@@ -16,15 +16,53 @@ function makeIntScale(...items) {
 	let mapped = items.forEach((a, i) => {lookup[a] = (i+1)/max})
 	return a=>{return lookup[a]}}
 
+let ynsScale = makeIntScale('No','Slightly/Special','Yes')
+
 let dIntScales = {// for each column, specify a function from value to number in [0,1]
-	// TODO data-specific
+	"Year of release": d => {return ((d - 1980) / (2018 - 1980))},
+	"Primarily vertical or horizontal": makeIntScale('Vertical','Mixed','Horizontal'),
+	"Backtracking": ynsScale,
+	"Physical structure": makeIntScale('Linear','Mixed','Open'),
+	"Jump combat": ynsScale,
+	"Melee combat": ynsScale,
+	"Ranged combat": ynsScale,
+	"2D/3D": makeIntScale('2', '3'),
+	"Character progression": ynsScale,
+	"Collectables": ynsScale,
+	"Power-up": ynsScale,
+	"Multiple jump types": ynsScale,
+	"Swimming": ynsScale,
+	"Air control": makeIntScale('None','Weak','Strong'),
+	"Airjump": ynsScale,
+	"Walljump": ynsScale,
+	"Leeway for Errors": makeIntScale('Little','Lots','Health'),
+	"Multiplayer": makeIntScale('No','Co-op','Competitive'),
+	"Story": makeIntScale('No','Cue','Yes'),
 }
 
 // less typing for up to ten colors
-function makeColScale(count) {return d3.scaleOrdinal(d3.schemeCategory10[count])}
+function makeColScale() {return d3.scaleOrdinal(d3.schemeCategory10)}
 
 let dColScales = {// for each column, specify a function from value to color
-	// TODO
+	"Year of release": d => {return d3.interpolatePlasma(dIntScales['Year of release'](d))},
+	"Primarily vertical or horizontal": makeColScale(),
+	"Backtracking": makeColScale(),
+	"Physical structure": makeColScale(),
+	"Jump combat": makeColScale(),
+	"Melee combat": makeColScale(),
+	"Ranged combat": makeColScale(),
+	"2D/3D": makeColScale(),
+	"Character progression": makeColScale(),
+	"Collectables": makeColScale(),
+	"Power-up": makeColScale(),
+	"Multiple jump types": makeColScale(),
+	"Swimming": makeColScale(),
+	"Air control": makeColScale(),
+	"Airjump": makeColScale(),
+	"Walljump": makeColScale(),
+	"Leeway for Errors": makeColScale(),
+	"Multiplayer": makeColScale(),
+	"Story": makeColScale(),
 }
 
 // set up contents of dropdowns
