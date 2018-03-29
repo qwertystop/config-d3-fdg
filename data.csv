@@ -1,16 +1,84 @@
-Name,Year of release,Primarily vertical or horizontal,Backtracking,Physical structure,Jump combat,Melee combat,Ranged combat,2D/3D,Character progression,Collectables,Power-up,Multiple jump types,Swimming,Air control,Airjump,Walljump,Leeway for Errors,Multiplayer,Story,Notes
-Pitfall,1982,Horizontal,Yes,Linear,No,No,No,2,No,Yes,No,No,No,None,No,No,Little,No,No,
-Ice Climber,1985,Vertical,No,Linear,No,No,No,2,No,No,No,No,No,None,No,No,Little,Co-op,No,
-Donkey Kong,1981,Vertical,No,Linear,No,No,No,2,No,No,Yes,No,No,None,No,No,Little,No,No,
-Super Mario Bros,1983,Horizontal,No,Linear,Yes,No,No,2,No,No,Yes,No,Yes,Weak,No,No,Little,Competitive,No,
-Zelda II: The Adventure of Link,1987,Horizontal,Yes,Open,No,Yes,No,2,Yes,Yes,No,No,No,None,Slightly/Special,No,Health,No,Cue,
-Super Mario 64,1996,Mixed,Yes,Open,Yes,Yes,No,3,No,Yes,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Health,No,Cue,
-Banjo-Kazooie,1998,Mixed,Yes,Open,No,Yes,Yes,3,No,Yes,Yes,No,Yes,Weak,Yes,No,Health,No,Cue,
-Yoshi’s Island,1995,Mixed,No,Linear,Yes,Yes,Yes,2,No,Yes,Yes,No,No,Strong,Slightly/Special,No,Lots,No,Cue,
-Super Mario Sunshine,2002,Horizontal,Yes,Open,Yes,No,Yes,3,No,Yes,No,Yes,Yes,Strong,Slightly/Special,Yes,Health,No,Cue,
-Donkey Kong Country,1994,Horizontal,No,Linear,Yes,Yes,Yes,2,No,Yes,Yes,No,Yes,Weak,No,No,Little,No,No,
-Celeste,2018,Mixed,Slightly/Special,Mixed,No,No,Yes,2,Yes,Yes,Slightly/Special,No,No,Strong,Slightly/Special,Yes,Little,No,Yes,
-Owlboy,2016,Mixed,Yes,Open,No,No,Yes,2,Yes,No,No,No,No,Strong,Yes,No,Health,No,Yes,Complete free-flight for most of the game
-Super Meat Boy,2010,Mixed,No,Linear,No,No,No,2,No,Yes,No,No,No,Strong,No,Yes,Little,No,No,
-Metroid,1986,Mixed,Yes,Open,No,No,Yes,2,Yes,Yes,No,No,No,Strong,Slightly/Special,Slightly/Special,Health,No,Yes,
-Castlevania: Symphony of the Night,1997,Mixed,Yes,Open,No,No,Yes,2,Yes,No,No,No,No,Weak,Yes,No,Health,No,Yes,
+Name,Series,Subgenre,Secondary genre,Year of release,Primarily vertical or horizontal,Backtracking,Physical structure,Jump combat,Melee combat,Ranged combat,2D/3D,Collectibles,Power-up,Swimming,Air control,Airjump,Walljump,Leeway for Errors,Multiplayer,Story,Notes
+Banjo-Kazooie,Banjo-Kazooie,Collectathon,,1998,Mixed,Yes,Open,No,Yes,Yes,3,Yes,Yes,Yes,Weak,Yes,No,Moderate,No,Cue,
+Castlevania: Symphony of the Night,Castlevania,Metroidvania,RPG,1997,Mixed,Yes,Open,No,Yes,Yes,2,No,No,No,Weak,Yes,No,Moderate,No,Yes,
+Donkey Kong Country,Donkey Kong Country,,,1994,Horizontal,No,Linear,Yes,Yes,Yes,2,Yes,Yes,Yes,Weak,No,No,Low,No,No,
+Donkey Kong Country 2,Donkey Kong Country,,,1995,Horizontal,No,Linear,Yes,Yes,Yes,2,Yes,Yes,Yes,Weak,Yes,No,Low,No,No,
+Donkey Kong Country 3,Donkey Kong Country,,,1996,Horizontal,No,Linear,Yes,Yes,Yes,2,Yes,Yes,Yes,Weak,Yes,No,Low,No,No,
+Donkey Kong 64,Donkey Kong Country,Collectathon,,1999,Horizontal,Yes,Open,No,Yes,Yes,3,Yes,Yes,Yes,Weak,Slightly/Special,No,Moderate,No,Cue,
+Donkey Kong Country Returns,Donkey Kong Country,,,2010,Horizontal,No,Linear,Yes,Yes,Yes,2,Yes,Yes,Yes,Weak,Yes,No,Moderate,Co-op,No,
+Donkey Kong Country: Tropical Freeze,Donkey Kong Country,,,2014,Horizontal,No,Linear,Yes,Yes,Yes,2,Yes,Yes,Yes,Weak,Yes,No,Moderate,Co-op,No,
+Kirby's Dream Land,Kirby,Action,,1992,Horizontal,No,Linear,No,Yes,Yes,2,No,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby's Adventure,Kirby,Action,,1993,Horizontal,No,Linear,No,Yes,Yes,2,No,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby's Dream Land 2,Kirby,Action,,1995,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby Super Star,Kirby,Action,,1996,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby's Dream Land 3,Kirby,Action,,1997,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby 64: The Crystal Shards,Kirby,Action,,2000,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The only Kirby game to provide flight but limit its duration. Unlimited for most practical purposes, except a few optional puzzles."
+Kirby & the Amazing Mirror,Kirby,Action,,2004,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby: Canvas Curse,Kirby,Action,,2005,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Sink,Strong,No,No,Moderate,No,No,"The player does not directly control Kirby, instead drawing platforms to guide him or allow him to cross gaps."
+Kirby: Squeak Squad,Kirby,Action,,2006,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby's Epic Yarn,Kirby,Action,,2010,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Weak,No,No,High,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby's Return to Dream Land,Kirby,Action,,2011,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby: Triple Deluxe,Kirby,Action,,2014,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby and the Rainbow Curse,Kirby,Action,,2015,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Sink,Weak,No,No,Moderate,Co-op,No,"The player does not directly control Kirby, instead drawing platforms to guide him or allow him to cross gaps."
+Kirby: Planet Robobot,Kirby,Action,,2016,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,No,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Kirby: Star Allies,Kirby,Action,,2018,Horizontal,No,Linear,No,Yes,Yes,2,Yes,Yes,Yes,Strong,Yes,No,Moderate,Co-op,No,"The player has clumsy-but-unlimited flight throughout the game, and precise jumping is generally not required."
+Super Mario Bros,Mario,,,1983,Horizontal,No,Linear,Yes,No,Slightly/Special,2,No,Yes,Yes,Weak,No,No,Low,No,No,
+Super Mario Bros 2 (JP),Mario,,,1986,Horizontal,No,Linear,Yes,No,Slightly/Special,2,No,Yes,Yes,Weak,No,No,Low,No,No,
+Super Mario Bros 2 (US),Mario,,,1988,Mixed,No,Linear,Yes,No,Yes,2,No,No,Yes,Weak,No,No,Moderate,No,No,
+Super Mario Bros 3,Mario,,,1988,Horizontal,No,Linear,Yes,No,Slightly/Special,2,No,Yes,Yes,Weak,Slightly/Special,No,Low,No,No,"""Leeway for Errors"" has regional variance: In the Japanese release, all power-ups allow Mario to take damage once (reducing him to Small) before dying. In other releases and remakes, power-ups other than Super provide an additional hit (reducing him to Super before Small). Rating here is for the original (JP) release."
+Super Mario Land,Mario,,,1989,Horizontal,No,Linear,Yes,No,Yes,2,No,Yes,No,Weak,No,No,Low,No,No,
+Super Mario World,Mario,,,1990,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,Slightly/Special,No,Low,No,No,"""Leeway for Errors"" has some variance: In the original SNES release, all power-ups allow Mario to take damage once (reducing him to Small) before dying. In the GBA remake, power-ups other than Super provide an additional hit (reducing him to Super before Small). Rating here is for the original release."
+Super Mario Land 2,Mario,,,1992,Horizontal,No,Linear,Yes,No,Yes,2,No,Yes,Yes,Strong,No,No,Moderate,No,No,
+Super Mario 64,Mario,,,1996,Mixed,Yes,Open,Yes,Yes,No,3,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,No,Cue,
+Super Mario Sunshine,Mario,,,2002,Mixed,Yes,Open,Yes,No,Yes,3,Yes,No,Yes,Strong,Slightly/Special,Yes,Moderate,No,Cue,
+New Super Mario Bros,Mario,,,2006,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,No,Yes,Moderate,No,No,
+Super Mario Galaxy,Mario,,,2007,Mixed,Yes,Mixed,Yes,Yes,No,3,Yes,Yes,Yes,Strong,Yes,Yes,Moderate,Co-op,No,
+New Super Mario Bros Wii,Mario,,,2009,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,Co-op,No,
+Super Mario Galaxy 2,Mario,,,2010,Mixed,Yes,Mixed,Yes,Yes,No,3,Yes,Yes,Yes,Strong,Yes,Yes,Moderate,Co-op,No,
+New Super Mario Bros 2,Mario,,,2012,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,No,No,
+New Super Mario Bros U,Mario,,,2012,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,Co-op,No,
+Metroid,Metroid,Metroidvania,RPG,1986,Mixed,Yes,Open,No,No,Yes,2,Yes,No,No,Weak,Slightly/Special,No,Moderate,No,Cue,Air-jumping is unlocked fairly late in the game.
+Metriod II: Return of Samus,Metroid,Metroidvania,RPG,1991,Mixed,Yes,Open,No,No,Yes,2,Yes,No,No,Weak,Slightly/Special,No,Moderate,No,Cue,Air-jumping is unlocked fairly late in the game.
+Super Metroid,Metroid,Metroidvania,RPG,1994,Mixed,Yes,Open,No,No,Yes,2,Yes,No,Sink,Weak,Slightly/Special,Slightly/Special,Moderate,No,Cue,"Wall-jumping is optional, and the game does not teach it to the player unless they go to an optional area where they'd get stuck without wall-jumping. Air-jumping is unlocked fairly late in the game."
+Metroid Fusion,Metroid,Metroidvania,RPG,2002,Mixed,Yes,Linear,No,No,Yes,2,Yes,No,Sink,Weak,Slightly/Special,Slightly/Special,Moderate,No,Yes,"Wall-jumping is optional, and the game does not teach it to the player. Air-jumping is unlocked fairly late in the game."
+Metroid Prime,Metroid,Metroidvania,RPG,2002,Horizontal,Yes,Open,No,No,Yes,3,Yes,No,Sink,Weak,Yes,No,Moderate,No,Yes,
+Metroid Prime 2: Echoes,Metroid,Metroidvania,RPG,2004,Horizontal,Yes,Open,No,No,Yes,3,Yes,No,Sink,Weak,Yes,Slightly/Special,Moderate,No,Yes,
+Metroid Prime 3: Corruption,Metroid,Metroidvania,RPG,2007,Horizontal,Yes,Open,No,Yes,Yes,3,Yes,No,Sink,Weak,Yes,Slightly/Special,Moderate,No,Yes,
+Metroid: Other M,Metroid,Action,RPG,2010,Horizontal,Yes,Linear,No,No,Yes,3,Yes,No,Sink,Weak,Slightly/Special,Yes,Moderate,No,Yes,Air-jumping is unlocked fairly late in the game.
+Ori and the Blind Forest,Ori,Metroidvania,,2015,Mixed,Yes,Open,No,Yes,Yes,2,Yes,No,Yes,Strong,Yes,Yes,Moderate,No,Yes,
+Sonic the Hedgehog,Sonic,,,1991,Horizontal,No,Mixed,Yes,No,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic the Hedgehog 2,Sonic,,,1992,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,Co-op,No,
+Sonic CD,Sonic,,,1993,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic the Hedgehog 3,Sonic,,,1994,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic & Knuckles,Sonic,,,1994,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic 3D Blast,Sonic,,,1996,Horizontal,No,Linear,Yes,Yes,No,3,Yes,Yes,No,Weak,No,No,High,No,No,
+Sonic Adventure,Sonic,,,1998,Horizontal,No,Linear,Yes,Yes,Slightly/Special,3,Yes,Yes,Sink,Weak,Yes,No,High,No,Yes,
+Sonic Adventure 2,Sonic,,,2001,Horizontal,No,Linear,Yes,Yes,Slightly/Special,3,Yes,Yes,Sink,Weak,Yes,No,High,No,Yes,
+Sonic Advance,Sonic,,,2001,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,Slightly/Special,Slightly/Special,High,No,No,"Two of four characters are capable of limited flight, and one can climb walls; others have no ""airjump"" or ""walljump"" ability."
+Sonic Heroes,Sonic,,,2003,Horizontal,No,Linear,Yes,Yes,Yes,3,Yes,Yes,No,Weak,Yes,No,High,No,Yes,
+Sonic Advance 2,Sonic,,,2003,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,Slightly/Special,Slightly/Special,High,No,No,"Three of five characters are capable of limited flight, and one can climb walls; others have no ""airjump"" or ""walljump"" ability."
+Sonic Advance 3,Sonic,,,2004,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,Slightly/Special,Slightly/Special,High,Co-op,No,"Three of five characters are capable of limited flight, and one can climb walls; others have no ""airjump"" or ""walljump"" ability."
+Shadow the Hedgehog,Sonic,,RPG,2005,Horizontal,No,Linear,No,Yes,Yes,3,Yes,Yes,No,Weak,Yes,No,High,No,Yes,
+Sonic Rush,Sonic,,,2005,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic the Hedgehog (2006),Sonic,,,2006,Horizontal,No,Linear,No,Yes,No,3,Yes,Yes,No,Weak,Yes,No,High,No,Yes,
+Sonic Rush Adventure,Sonic,,,2007,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,No,No,High,No,No,
+Sonic and the Secret Rings,Sonic,,RPG,2007,Horizontal,No,Linear,No,Yes,No,3,Yes,No,No,Weak,Yes,No,High,No,Yes,
+Sonic Unleashed,Sonic,,,2008,Horizontal,No,Linear,No,Yes,No,3,Yes,Yes,No,Weak,Yes,No,High,No,Yes,
+Sonic and the Black Knight,Sonic,,RPG,2009,Horizontal,No,Linear,No,Yes,No,3,Yes,No,No,Weak,No,No,High,No,Yes,
+Sonic Colors,Sonic,,,2010,Horizontal,No,Linear,No,Yes,No,3,Yes,Yes,Sink,Weak,Yes,No,High,No,Yes,
+Sonic Generations,Sonic,,,2011,Horizontal,No,Mixed,Yes,Yes,No,3,Yes,Yes,Sink,Weak,Slightly/Special,Slightly/Special,High,No,Yes,
+Sonic Lost World,Sonic,,,2013,Horizontal,No,Mixed,Yes,Yes,No,3,Yes,Yes,Sink,Weak,Yes,No,High,Co-op,Yes,
+Sonic Boom: Rise of Lyric,Sonic,,,2014,Horizontal,No,Linear,No,Yes,No,3,Yes,No,No,Strong,Yes,Yes,High,No,Yes,
+Sonic Boom: Shattered Crystal,Sonic,,,2014,Horizontal,No,Linear,Yes,Yes,No,2,Yes,No,No,Weak,Yes,Yes,High,No,Yes,
+Sonic Mania,Sonic,,,2017,Horizontal,No,Mixed,Yes,Yes,No,2,Yes,Yes,Sink,Weak,Slightly/Special,No,High,Co-op,No,
+Sonic Forces,Sonic,,,2017,Horizontal,No,Mixed,No,Yes,Yes,3,Yes,Yes,No,Weak,Yes,No,High,No,Yes,
+Super Meat Boy,Super Meat Boy,Challenge,,2010,Mixed,No,Linear,No,No,No,2,Yes,No,No,Strong,No,Yes,Low,No,No,
+Zelda II: The Adventure of Link,The Legend of Zelda,,RPG,1987,Horizontal,Yes,Open,No,Yes,No,2,Yes,No,No,None,Slightly/Special,No,Moderate,No,Cue,
+Yoshi’s Island,Yoshi’s Island,,,1995,Mixed,No,Linear,Yes,Yes,Yes,2,Yes,Yes,No,Strong,Slightly/Special,No,High,No,Cue,
+Donkey Kong,,,,1981,Vertical,No,Linear,No,No,No,2,No,Yes,No,None,No,No,Low,No,No,
+Pitfall,,,,1982,Horizontal,Yes,Linear,No,No,No,2,Yes,No,No,None,No,No,Low,No,No,
+Ice Climber,,,,1985,Vertical,No,Linear,No,No,No,2,No,No,No,None,No,No,Low,Co-op,No,
+Cave Story,,Metroidvania,RPG,2004,Horizontal,Yes,Open,No,No,Yes,2,Yes,No,Sink,Strong,Yes,No,No,No,Yes,
+Axiom Verge,,Metroidvania,RPG,2015,Mixed,Yes,Open,No,No,Yes,2,Yes,No,No,Strong,Slightly/Special,No,No,No,Yes,
+Owlboy,,,RPG,2016,Mixed,Yes,Open,No,No,Yes,2,No,No,No,Strong,Yes,No,Moderate,No,Yes,"Complete free-flight for most of the game, pushes the borders of ""platformer"" a bit."
+Celeste,,Challenge,,2018,Mixed,No,Mixed,No,No,No,2,Yes,No,Sink,Strong,Slightly/Special,Yes,Low,No,Yes,
