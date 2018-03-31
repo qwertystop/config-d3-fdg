@@ -19,6 +19,9 @@ function makeIntScale(...items) {
 let ynsScale = makeIntScale('No','Slightly/Special','Yes')
 
 let dIntScales = {// for each column, specify a function from value to number in [0,1]
+	"Series": makeIntScale("", "Banjo-Kazooie", "Castlevania", "Donkey Kong Country", "Kirby", "Mario", "Ori", "Sonic", "Super Meat Boy", "The Legend of Zelda", "Yoshi's Island"),
+	"Subgenre": makeIntScale("", "Collectathon", "Metroidvania", "Action", "Challenge"),
+	"Secondary genre": makeIntScale("", "RPG"),
 	"Year of release": d => {return ((d - 1980) / (2018 - 1980))},
 	"Primarily vertical or horizontal": makeIntScale('Vertical','Mixed','Horizontal'),
 	"Backtracking": ynsScale,
@@ -31,7 +34,7 @@ let dIntScales = {// for each column, specify a function from value to number in
 	"Collectables": ynsScale,
 	"Power-up": ynsScale,
 	"Multiple jump types": ynsScale,
-	"Swimming": ynsScale,
+	"Swimming": makeIntScale("No", "Sink", "Yes"),
 	"Air control": makeIntScale('None','Weak','Strong'),
 	"Airjump": ynsScale,
 	"Walljump": ynsScale,
@@ -40,10 +43,13 @@ let dIntScales = {// for each column, specify a function from value to number in
 	"Story": makeIntScale('No','Cue','Yes'),
 }
 
-// less typing for up to ten colors
+// less typing for up to ten colors. Good for most purposes.
 function makeColScale() {return d3.scaleOrdinal(d3.schemeCategory10)}
 
 let dColScales = {// for each column, specify a function from value to color
+	"Series": d => d3.scaleOrdinal(d3.schemePaired),
+	"Subgenre": makeColScale(),
+	"Secondary genre": makeColScale(),
 	"Year of release": d => {return d3.interpolatePlasma(dIntScales['Year of release'](d))},
 	"Primarily vertical or horizontal": makeColScale(),
 	"Backtracking": makeColScale(),
