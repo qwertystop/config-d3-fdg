@@ -19,7 +19,8 @@ function makeIntScale(...items) {
 let ynsScale = makeIntScale('No','Slightly/Special','Yes')
 
 let dIntScales = {// for each column, specify a function from value to number in [0,1]
-	"Series": makeIntScale("", "Banjo-Kazooie", "Castlevania", "Donkey Kong Country", "Kirby", "Mario", "Ori", "Sonic", "Super Meat Boy", "The Legend of Zelda", "Yoshi's Island"),
+	"Series": makeIntScale("", "Banjo-Kazooie", "Castlevania", "Donkey Kong Country", "Metroid",
+		"Kirby", "Mario", "Ori", "Sonic", "Super Meat Boy", "The Legend of Zelda", "Yoshi's Island"),
 	"Subgenre": makeIntScale("", "Collectathon", "Metroidvania", "Action", "Challenge"),
 	"Secondary genre": makeIntScale("", "RPG"),
 	"Year of release": d => {return ((d - 1980) / (2018 - 1980))},
