@@ -44,10 +44,10 @@ let dIntScales = {// for each column, specify a function from value to number in
 }
 
 // less typing for up to ten colors. Good for most purposes.
-function makeColScale() {return d3.scaleOrdinal(d3.schemeCategory10)}
+function makeColScale() {return d3.scaleOrdinal(d3.schemeCategory20)}
 
 let dColScales = {// for each column, specify a function from value to color
-	"Series": d => d3.scaleOrdinal(d3.schemePaired),
+	"Series": makeColScale(),
 	"Subgenre": makeColScale(),
 	"Secondary genre": makeColScale(),
 	"Year of release": d => {return d3.interpolatePlasma(dIntScales['Year of release'](d))},
