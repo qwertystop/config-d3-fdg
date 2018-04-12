@@ -29,7 +29,7 @@ Super Mario Bros 3,Mario,,,1988,Horizontal,No,Linear,Yes,No,Slightly/Special,2,N
 Super Mario Land,Mario,,,1989,Horizontal,No,Linear,Yes,No,Yes,2,No,Yes,No,Weak,No,No,Low,No,No,
 Super Mario World,Mario,,,1990,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,Slightly/Special,No,Low,No,No,"""Leeway for Errors"" has some variance: In the original SNES release, all power-ups allow Mario to take damage once (reducing him to Small) before dying. In the GBA remake, power-ups other than Super provide an additional hit (reducing him to Super before Small). Rating here is for the original release."
 Super Mario Land 2,Mario,,,1992,Horizontal,No,Linear,Yes,No,Yes,2,No,Yes,Yes,Strong,No,No,Moderate,No,No,
-Super Mario 64,Mario,,,1996,Mixed,Yes,Open,Yes,Yes,No,3,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,No,Cue,
+Super Mario 64,Mario,Collectathon,,1996,Mixed,Yes,Open,Yes,Yes,No,3,Yes,Yes,Yes,Weak,Slightly/Special,Yes,Moderate,No,Cue,
 Super Mario Sunshine,Mario,,,2002,Mixed,Yes,Open,Yes,No,Yes,3,Yes,No,Yes,Strong,Slightly/Special,Yes,Moderate,No,Cue,
 New Super Mario Bros,Mario,,,2006,Horizontal,No,Linear,Yes,No,Slightly/Special,2,Yes,Yes,Yes,Weak,No,Yes,Moderate,No,No,
 Super Mario Galaxy,Mario,,,2007,Mixed,Yes,Mixed,Yes,Yes,No,3,Yes,Yes,Yes,Strong,Yes,Yes,Moderate,Co-op,No,
